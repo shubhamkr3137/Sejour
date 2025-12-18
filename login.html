@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login | Sejour</title>
+    <style>
+        body{
+            margin:0;
+            font-family:Arial;
+        }
+
+        /* NAVBAR */
+        .navbar{
+            background:#0a3d62;
+            color:white;
+            padding:15px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            z-index:10;
+        }
+
+        .navbar ul{
+            list-style:none;
+            display:flex;
+            margin:0;
+            padding:0;
+        }
+
+        .navbar li{
+            margin-left:20px;
+        }
+
+        .navbar a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        /* BACKGROUND */
+        .bg{
+            height:calc(100vh - 70px);
+            background:url("https://images.unsplash.com/photo-1566073771259-6a8506099945") center/cover;
+            display:flex;
+            align-items:center;
+        }
+
+        .overlay{
+            background:rgba(0,0,0,0.55);
+            width:100%;
+            height:100%;
+            display:flex;
+            align-items:center;
+        }
+
+        /* LOGIN CARD */
+        .box{
+            background:white;
+            width:360px;
+            margin-left:80px;
+            padding:35px;
+            border-radius:14px;
+            box-shadow:0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .box h2{
+            margin-top:0;
+        }
+
+        .box p{
+            color:#555;
+            font-size:14px;
+        }
+
+        .box input{
+            width:93%;
+            padding:12px;
+            margin:10px 0;
+            border-radius:8px;
+            border:1px solid #ddd;
+        }
+
+        .box input:focus{
+            outline:none;
+            border-color:#1e90ff;
+        }
+
+        button{
+            background:#1e90ff;
+            color:white;
+            border:none;
+            padding:12px;
+            width:100%;
+            border-radius:8px;
+            font-weight:bold;
+            cursor:pointer;
+            margin-top:10px;
+        }
+
+        .box a{
+            color:#1e90ff;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        /* RIGHT TEXT */
+        .welcome-text{
+            color:white;
+            margin-left:auto;
+            margin-right:80px;
+            max-width:400px;
+        }
+
+        .welcome-text h1{
+            font-size:32px;
+        }
+
+        .welcome-text p{
+            font-size:15px;
+            line-height:1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <h1>Sejour</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+    </ul>
+</div>
+
+<div class="bg">
+    <div class="overlay">
+
+        <!-- LOGIN BOX -->
+        <div class="box">
+            <h2>Welcome Back</h2>
+            <p>Login to continue your hotel booking</p>
+
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+
+            <button onclick="login()">Login</button>
+
+            <p style="margin-top:15px;">
+                New user?
+                <a href="signup.html">Create Account</a>
+            </p>
+        </div>
+
+        <!-- RIGHT SIDE TEXT -->
+        <div class="welcome-text">
+            <h1>Book Your Perfect Stay</h1>
+            <p>
+                Discover comfortable rooms, easy bookings,
+                secure payments and memorable experiences —
+                all in one place.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function login() {
+    let username = document.getElementById("username").value.trim();
+    let password = document.getElementById("password").value.trim();
+
+    if (username === "" || password === "") {
+        alert("Please fill all fields before login.");
+        return;
+    }
+
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

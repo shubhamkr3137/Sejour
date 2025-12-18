@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sejour | Hotel Reservation</title>
+    <style>
+        body { margin:0; font-family: Arial; }
+        .navbar {
+            background:#0a3d62;
+            color:white;
+            padding:15px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .navbar a {
+            color:white;
+            margin-left:20px;
+            text-decoration:none;
+            font-weight:bold;
+        }
+        .hero {
+            background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945') center/cover;
+            height:calc(100vh - 70px);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .search-box {
+            background:rgba(0,0,0,0.6);
+            padding:30px;
+            border-radius:8px;
+            color:white;
+        }
+        .search-box input {
+            padding:10px;
+            width:220px;
+        }
+        .search-box button {
+            padding:10px;
+            background:#1e90ff;
+            border:none;
+            color:white;
+            cursor:pointer;
+        }
+        .section {
+            background:#eaf3ff;
+            padding:40px;
+        }
+
+        .footer{
+    background:#0a3d62;   /* blue strip */
+    color:white;          /* text color */
+    text-align:center;
+    padding:12px 0;
+    font-size:14px;
+    margin-top:0px;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>Sejour</h1>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="search-box">
+        <h3>Find Hotels</h3>
+        <input type="text" id="location" placeholder="Enter location">
+        <button onclick="search()">Search</button>
+    </div>
+</div>
+
+<div id="about" style="background:#eaf3ff;padding:40px;">
+    <h2>About Us</h2>
+    <p>"Comfort is not a luxury, it is a necessity."</p>
+    <p>Book verified hotels with secure payment and best prices.</p>
+    <p>
+        Sejour is a trusted hotel reservation platform providing
+        affordable, comfortable, and secure hotel bookings across cities.
+    </p>
+</div>
+
+<div id="contact" style="background:#dbeaff;padding:40px;">
+    <h2>Contact Us</h2>
+    <p>Email: support@sejour.com</p>
+    <p>Phone: +91 98765 43210</p>
+</div>
+
+
+<script>
+function search(){
+    let loc = document.getElementById("location").value.trim();
+    if(loc === ""){
+        alert("Please enter location first!");
+        return;
+    }
+    localStorage.setItem("location", loc);
+    window.location.href="hotels.html";
+}
+</script>
+
+<div class="footer">
+    © 2025 Copyrights by <b>Sejour</b>. All Rights Reserved.
+</div>
+
+</body>
+</html>
+

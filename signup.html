@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up | Sejour</title>
+    <style>
+        body{
+            margin:0;
+            font-family:Arial;
+        }
+
+        /* NAVBAR */
+        .navbar{
+            background:#0a3d62;
+            color:white;
+            padding:15px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            z-index:10;
+        }
+
+        .navbar ul{
+            list-style:none;
+            display:flex;
+            margin:0;
+            padding:0;
+        }
+
+        .navbar li{
+            margin-left:20px;
+        }
+
+        .navbar a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        /* BACKGROUND */
+        .bg{
+            height:calc(100vh - 70px);
+            background:url("https://images.unsplash.com/photo-1566073771259-6a8506099945") center/cover;
+            display:flex;
+            align-items:center;
+        }
+
+        .overlay{
+            background:rgba(0,0,0,0.55);
+            width:100%;
+            height:100%;
+            display:flex;
+            align-items:center;
+        }
+
+        /* SIGNUP CARD */
+        .box{
+            background:white;
+            width:380px;
+            margin-left:80px;
+            padding:35px;
+            border-radius:14px;
+            box-shadow:0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .box h2{
+            margin-top:0;
+        }
+
+        .box p{
+            color:#555;
+            font-size:14px;
+        }
+
+        .box input{
+            width:100%;
+            padding:12px;
+            margin:8px 0;
+            border-radius:8px;
+            border:1px solid #ddd;
+        }
+
+        .box input:focus{
+            outline:none;
+            border-color:#1e90ff;
+        }
+
+        button{
+            background:#1e90ff;
+            color:white;
+            border:none;
+            padding:12px;
+            width:100%;
+            border-radius:8px;
+            font-weight:bold;
+            cursor:pointer;
+            margin-top:10px;
+        }
+
+        .box a{
+            color:#1e90ff;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        /* RIGHT TEXT */
+        .welcome-text{
+            color:white;
+            margin-left:auto;
+            margin-right:80px;
+            max-width:420px;
+        }
+
+        .welcome-text h1{
+            font-size:32px;
+        }
+
+        .welcome-text p{
+            font-size:15px;
+            line-height:1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <h1>Sejour</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+    </ul>
+</div>
+
+<div class="bg">
+    <div class="overlay">
+
+        <!-- SIGNUP BOX -->
+        <div class="box">
+            <h2>Create Account</h2>
+            <p>Sign up to book hotels easily</p>
+
+            <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email ID" required>
+            <input type="text" placeholder="Phone Number" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+
+            <button onclick="signup()">Create Account</button>
+
+            <p style="margin-top:15px;">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+        </div>
+
+        <!-- RIGHT SIDE TEXT -->
+        <div class="welcome-text">
+            <h1>Start Your Journey</h1>
+            <p>
+                Create an account to explore premium hotels,
+                manage bookings, enjoy secure payments and
+                personalized travel experiences.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function signup(){
+    localStorage.setItem("loggedIn","true");
+    window.location.href="login.html";
+}
+</script>
+
+</body>
+</html>

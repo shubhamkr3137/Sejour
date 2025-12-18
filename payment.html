@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Payment Gateway</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{font-family:Arial;font-weight:bold;background:#eaf3ff;}
+.center-wrapper{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:40px;
+}
+
+.box{
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    width:350px;
+}
+
+input{margin:5px 0;padding:8px;width:100%;}
+button{background:#1e90ff;color:white;border:none;padding:10px;}
+
+body{
+    margin:0;
+    font-family:Arial;
+}
+
+.navbar{
+    background:#0a3d62;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    margin:0;
+    padding:0;
+}
+
+.navbar li{
+    margin-left:20px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.navbar a:hover{
+    text-decoration:underline;
+}
+
+.pay-option{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:12px 0;
+    cursor:pointer;
+}
+
+.pay-option i{
+    font-size:18px;
+    color:#1e90ff;
+}
+
+.pay-option input{
+    width:auto;
+}
+
+
+</style>
+
+<div class="navbar">
+    <h1>Sejour</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+    </ul>
+</div>
+
+</head>
+
+<body>
+
+<div class="center-wrapper">
+
+<h1>Payment Gateway</h1>
+
+<div class="box">
+
+<label class="pay-option">
+    <input type="radio" name="pay" onclick="upi()">
+    <i class="fa-solid fa-qrcode"></i>
+    <span>UPI</span>
+</label>
+
+<label class="pay-option">
+    <input type="radio" name="pay" onclick="card()">
+    <i class="fa-regular fa-credit-card"></i>
+    <span>Debit / Credit Card</span>
+</label>
+
+<label class="pay-option">
+    <input type="radio" name="pay" onclick="net()">
+    <i class="fa-solid fa-building-columns"></i>
+    <span>Net Banking</span>
+</label>
+
+<br>
+
+
+<div id="payBox"></div>
+</div>
+</div>
+
+<script>
+function upi(){
+    document.getElementById("payBox").innerHTML=
+    `<input type='text' placeholder='Enter UPI ID'>
+     <button>Validate & Pay</button>`;
+}
+
+function card(){
+    document.getElementById("payBox").innerHTML=
+    `<input type='text' placeholder='Name on Card'>
+     <input type='text' placeholder='Card Number'>
+     <input type='month' placeholder='Expiry Date'>
+     <input type='password' placeholder='CVV'>
+     <button>Pay Now</button>`;
+}
+
+function net(){
+    document.getElementById("payBox").innerHTML=
+    `<input type='text' placeholder='Bank Name'>
+     <button>Proceed</button>`;
+}
+</script>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+</head>
+<body style="background:#eaf3ff;font-family:Arial;">
+
+<div style="background:white;margin:100px;padding:30px;border-radius:8px;">
+    <h2>Payment Portal</h2>
+    <p>Amount: ₹3000</p>
+    <input type="text" placeholder="Card Number"><br><br>
+    <input type="text" placeholder="CVV"><br><br>
+    <button style="background:#1e90ff;color:white;padding:10px;border:none;">Pay Now</button>
+</div>
+
+</body>
+</html> -->

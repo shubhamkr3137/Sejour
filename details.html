@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enter Booking Details</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(135deg,#eaf3ff,#f7fbff);
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    background:#0a3d62;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    margin-left:20px;
+}
+
+/* ===== MAIN CARD ===== */
+.wrapper{
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.card{
+    background:white;
+    width:850px;
+    border-radius:12px;
+    display:flex;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* ===== STEPS ===== */
+.steps{
+    width:220px;
+    border-right:1px solid #eee;
+    padding-right:20px;
+}
+
+.step{
+    display:flex;
+    align-items:center;
+    margin-bottom:20px;
+    color:#555;
+}
+
+.circle{
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:#1e90ff;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:10px;
+    font-size:14px;
+}
+
+/* ===== FORM ===== */
+.form{
+    flex:1;
+    padding-left:40px;
+}
+
+.form h2{
+    margin-top:0;
+}
+
+.form p{
+    color:#666;
+    font-size:14px;
+}
+
+input, textarea{
+    width:85%;
+    padding:10px;
+    margin-top:6px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.row{
+    display:flex;
+    gap:50px;
+}
+
+button{
+    background:#1e90ff;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    font-size:15px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0f78d1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <h1>Sejour</h1>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+</div>
+
+<div class="wrapper">
+<div class="card">
+
+    <!-- LEFT STEPS -->
+    <!-- <div class="steps">
+        <div class="step">
+            <div class="circle">1</div>
+            Personal Details
+        </div>
+        <div class="step">
+            <div class="circle" style="background:#ccc;">2</div>
+            Booking Info
+        </div>
+        <div class="step">
+            <div class="circle" style="background:#ccc;">3</div>
+            Payment
+        </div>
+    </div> -->
+
+    <!-- FORM -->
+    <div class="form">
+        <h2>Verify your personal details</h2>
+        <p>Please enter accurate details to continue booking.</p>
+
+        <label>Full Name</label><br>
+        <input type="text" placeholder="Your name" required><br>
+
+        <label>Email Address</label><br>
+        <input type="email" placeholder="example@email.com" required><br>
+
+        <div class="row">
+            <div>
+                <label>Date of Birth</label><br>
+                <input type="date" style="width:180px;"required><br>
+            </div>
+            <div>
+                <label>Phone Number</label><br>
+                <input type="tel" placeholder="1234567890" style="width:180px;"required><br>
+            </div>
+            <div>
+                <label>Number of Guests</label><br>
+                <input type="number" min="1"  style="width:180px;"required>
+            </div>
+        </div>
+<!-- 
+        <label>Address</label>
+        <textarea rows="3" placeholder="Full address"></textarea> -->
+
+        <div class="row">
+            <div>
+                <label>Check-in</label><br>
+                <input type="date" style="width:180px;"required><br>
+            </div>
+            <div>
+                <label>Check-out</label><br>
+                <input type="date" style="width:180px;"required><br>
+            </div>
+       
+            
+         </div>
+
+        <button onclick="pay()">Proceed to Payment</button>
+    </div>
+
+</div>
+</div>
+
+<script>
+function pay(){
+    window.location.href="payment.html";
+}
+</script>
+
+</body>
+</html>

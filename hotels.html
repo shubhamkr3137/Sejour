@@ -1,0 +1,141 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Available Hotels</title>
+<style>
+body{font-family:Arial;background:#eaf3ff;}
+.hotel{
+    background:white;
+    margin:20px;
+    padding:20px;
+    border-radius:8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.hotel img{
+    width:200px;
+    height:130px;
+    border-radius:8px;
+}
+button{
+    background:#1e90ff;
+    color:white;
+    border:none;
+    padding:10px;
+}
+
+body{
+    margin:0;
+    font-family:Arial;
+}
+
+.navbar{
+    background:#0a3d62;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    margin:0;
+    padding:0;
+}
+
+.navbar li{
+    margin-left:20px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.navbar a:hover{
+    text-decoration:underline;
+}
+
+#loc{
+    color:#1e90ff;   /* blue color */
+    font-weight:bold;
+    text-transform:capitalize
+}
+
+
+.container{
+    width:80%;
+    margin:auto;
+}
+
+
+</style>
+
+<div class="navbar">
+    <h1>Sejour</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+    </ul>
+</div>
+
+</head>
+
+<body>
+
+<h1 style="text-align:center;">Hotels in <span id="loc"></span></h1>
+
+<br>
+<div class="container">
+<div class="hotel">
+    <div>
+        <h3>Blue Ocean Hotel</h3>
+        <p>Rooms: Single | Double | AC | Non-AC</p>
+        <button onclick="viewRoom()">View Rooms</button>
+    </div>
+    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+</div>
+
+<div class="hotel">
+    <div>
+        <h3>Royal Bengal Hotel</h3>
+        <p>Rooms: Single | Double | AC</p>
+        <button onclick="viewRoom()">View Rooms</button>
+    </div>
+    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791">
+</div>
+
+<div class="hotel">
+    <div>
+        <h3>Vedic Village Hotel</h3>
+        <p>Rooms: Double | AC | Non-AC</p>
+        <button onclick="viewRoom()">View Rooms</button>
+    </div>
+    <!-- FIXED IMAGE -->
+    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4">
+</div>
+</div>
+<script>
+document.getElementById("loc").innerText =
+    localStorage.getItem("location");
+
+function viewRoom(){
+    if(localStorage.getItem("loggedIn")==="true")
+        window.location.href="room.html";
+    else
+        window.location.href="login.html";
+}
+</script>
+
+</body>
+</html>
+
